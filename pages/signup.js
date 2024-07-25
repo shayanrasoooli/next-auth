@@ -13,7 +13,7 @@ const router = useRouter()
         })
         const data = await res.json()
         console.log(data);
-        if (data.status === "success") {
+        if (data.status === "successfully") {
             router.push("/signin")
         }
     } 
