@@ -5,6 +5,18 @@ function SignUp() {
 const [email  , setEmail] = useState("")
 const [password  , setPassword] = useState("")
 const router = useRouter()
+
+useEffect(() => {
+    const  res = fetch("/api/user")
+    .then(res => res.json())
+    .then(data => {
+       if (data.status === "success") {
+        router.replace("/dashboard")
+       }
+    })
+  } , [])
+
+  
     const SignUpHandler = async () => {
         const res = await fetch("/api/Auth/SignUp" , {
             method : "POST" ,
