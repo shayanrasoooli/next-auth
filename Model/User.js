@@ -9,6 +9,12 @@ const schema = new Schema({
         type : String ,
         required : true
     }, 
+    name : {
+        type : String 
+    }, 
+    lastName : {
+        type : String 
+    }, 
     createdAt : {
         type : Date ,
         default : () => Date.now(),
